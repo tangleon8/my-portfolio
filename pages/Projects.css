@@ -1,0 +1,25 @@
+.projects {
+  padding: 2rem;
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  color: #f6e05e;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.project-card {
+  background-color: #2d3748;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  color: #f6e05e;
+  margin-bottom: 0.5rem;
+}

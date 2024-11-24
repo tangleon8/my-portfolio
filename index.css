@@ -1,0 +1,142 @@
+/* Reset CSS for Consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Body Styling */
+body {
+  font-family: 'Arial', sans-serif; /* Use a clean font */
+  background-color: #1a202c; /* Dark background */
+  color: #e2e8f0; /* Light text */
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Global Link Styling */
+a {
+  color: #f6e05e; /* Highlight color */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ecc94b; /* Slightly brighter highlight */
+}
+
+/* Global Button Styling */
+button {
+  padding: 0.8rem 1.5rem;
+  background-color: #f6e05e;
+  color: #1a202c;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #ecc94b;
+}
+
+/* Layout Utilities */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Styling */
+section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #f6e05e;
+}
+
+section p {
+  font-size: 1.1rem;
+  color: #a0aec0;
+  margin-bottom: 2rem;
+}
+
+/* Navbar */
+nav {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  margin: 0 1rem;
+}
+
+nav a:hover {
+  color: #ecc94b;
+}
+
+/* Footer */
+footer {
+  background-color: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+footer a {
+  color: #f6e05e;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  color: #f6e05e;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+  background-color: #2d3748;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  color: #f6e05e;
+  margin-bottom: 0.5rem;
+}
