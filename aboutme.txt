@@ -1,0 +1,29 @@
+About Me
+
+Hello! 👋 I'm Leon Tang, a highly motivated and curious individual with a passion for technology, leadership, and making a positive impact on the world. Whether it’s collaborating on innovative projects, empowering others through mentorship, or diving deep into complex cybersecurity challenges, I bring enthusiasm, focus, and a team-first mindset to everything I do.
+
+Personal and Academic Journey
+I am currently pursuing a combined B.S./M.S. in Information Systems at the University of Maryland, Baltimore County (UMBC), with an expected graduation date of May 2026. My academic journey reflects my commitment to blending technical expertise with real-world problem-solving. With a GPA of 3.67, I’ve taken courses in database design, machine learning, and cybersecurity that have equipped me with a strong foundation in data analytics, programming, and systems security.
+
+I am honored to serve as the President of the Information Systems Security Association (ISSA) Chapter at UMBC and the Vice President of the UMBC Men’s Rugby Team, where I balance technical leadership with my passion for sports and teamwork.
+
+Professional Experience
+Throughout my career, I’ve interned at leading organizations where I applied my skills to create impactful solutions:
+
+IT Intern at The Depository Trust & Clearing Corporation (DTCC): Developed real-time dashboards for trade message monitoring, improving system reliability and team efficiency.
+Research Assistant at UMBC: Conducted a literature review on cybersecurity adversarial attacks, focusing on deception techniques in IoT, autonomous vehicles, and drones.
+Intern at University of Wisconsin-Madison: Used machine learning to optimize donation campaigns for The River Food Pantry, improving donor engagement and campaign success rates.
+These experiences have sharpened my technical skills in Power BI, Splunk, Python, SQL, and more, while also fostering my ability to collaborate in cross-functional teams.
+
+Passions and Goals
+I am deeply passionate about cybersecurity, a rapidly evolving field that challenges me to think critically and creatively. My goal is to contribute to securing digital systems while educating others about the importance of protecting their online presence.
+
+Beyond technology, I value leadership and personal growth. I thrive in environments where I can motivate others, solve challenging problems, and leave a lasting impact.
+
+Fun Facts and Interests
+Rugby Enthusiast: As Vice President of the UMBC Men’s Rugby Team, I lead on and off the field, embodying sportsmanship and resilience.
+Fitness Advocate: I’m committed to maintaining a healthy lifestyle through weightlifting, cardio, and staying active.
+Lifelong Learner: I recently began exploring my cultural roots by learning Mandarin and am on a journey to grow spiritually by deepening my faith.
+What I Believe
+I firmly believe in the power of community, innovation, and kindness. My philosophy is simple: work hard, stay curious, and always strive to uplift those around you. Whether I’m leading a team, building a project, or simply sharing a laugh, I aim to create a positive and inspiring environment.
+
