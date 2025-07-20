@@ -1,77 +1,148 @@
-/* Navbar Styling */
+/* ============================= */
+/*       Overall Navbar          */
+/* ============================= */
 .navbar {
-  position: fixed;
-  top: 0;
+  position: sticky;                /* non-sticky */
   width: 100%;
-  background-color: #1a202c; /* Match the dark background of your page */
-  padding: 0.8rem 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: background 0.3s ease;
+  padding: 0.75rem 2rem;
+  background: rgba(13, 17, 23, 0.8); /* slightly more opaque glass */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 900;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
+/* ============================= */
+/*           Logo                */
+/* ============================= */
 .navbar-logo {
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #f6e05e; /* Accent yellow color */
-  text-transform: uppercase;
+  font-weight: 700;
+  color: #00aaff;                    /* same blue */
   letter-spacing: 2px;
   text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.navbar-logo:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
 }
 
+/* ============================= */
+/*      Toggler (Mobile)         */
+/* ============================= */
+.navbar-toggler {
+  display: none; /* only shown on max-width 768px */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #00aaff;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.navbar-toggler:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* ============================= */
+/*           Links               */
+/* ============================= */
 .navbar-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: center;
+  /* No positioning here; only on mobile do we reposition */
 }
 
 .navbar-link {
-  font-size: 1rem;
-  color: #e2e8f0; /* Light text to contrast the dark background */
-  text-decoration: none;
   position: relative;
-  font-weight: 500;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  color: #e6edf3;
+  text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0.25rem 0;
 }
 
 .navbar-link:hover {
-  color: #f6e05e; /* Highlight with yellow */
+  color: #00aaff;
 }
 
+/* Underline-on-hover effect */
 .navbar-link::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 0%;
+  width: 0;
   height: 2px;
-  background-color: #f6e05e; /* Accent underline */
+  background: linear-gradient(90deg, #00aaff, #8c54ff);
   transition: width 0.3s ease;
 }
-
 .navbar-link:hover::after {
   width: 100%;
 }
 
-/* Responsive Navbar */
+/* ============================= */
+/*        Responsive Rules       */
+/* ============================= */
 @media (max-width: 768px) {
-  .navbar-links {
-    display: none; /* Hide links for small screens */
+  /* Show toggler on mobile */
+  .navbar-toggler {
+    display: block;
   }
-}
 
-@media (min-width: 768px) {
+  /* Hide desktop links by default; show via scaleY */
   .navbar-links {
-    display: flex;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(14px);
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-out;
+    z-index: 800;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
   }
-}
 
-/* Scroll Behavior */
-html {
-  scroll-behavior: smooth;
+  /* When active, “unfold” the menu */
+  .navbar-links.active {
+    transform: scaleY(1);
+  }
+
+  /* Make each link full-width, with padding and subtle separators */
+  .navbar-link {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Remove underline pseudo-element on mobile (since background hover is more obvious) */
+  .navbar-link::after {
+    display: none;
+  }
+
+  .navbar-link:hover {
+    background: rgba(0, 170, 255, 0.1);
+    color: #00aaff;
+  }
 }
