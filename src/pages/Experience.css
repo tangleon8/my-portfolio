@@ -1,0 +1,555 @@
+/* Experience Page - Ultra Modern Design */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+.experience-container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #141414 50%, #000000 100%);
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Dynamic mouse-following background */
+.dynamic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+/* Animated particle field */
+.particle-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(229, 9, 20, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(229, 9, 20, 0.5);
+  animation: particleFloat 6s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.2);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-15px) scale(0.8);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Generate random positions for particles */
+.particle-1 { top: 10%; left: 5%; animation-delay: 0s; animation-duration: 6s; }
+.particle-2 { top: 20%; left: 15%; animation-delay: 0.5s; animation-duration: 7s; }
+.particle-3 { top: 30%; left: 25%; animation-delay: 1s; animation-duration: 5s; }
+.particle-4 { top: 40%; left: 35%; animation-delay: 1.5s; animation-duration: 8s; }
+.particle-5 { top: 50%; left: 45%; animation-delay: 2s; animation-duration: 6s; }
+.particle-6 { top: 60%; left: 55%; animation-delay: 2.5s; animation-duration: 7s; }
+.particle-7 { top: 70%; left: 65%; animation-delay: 3s; animation-duration: 5s; }
+.particle-8 { top: 80%; left: 75%; animation-delay: 3.5s; animation-duration: 6s; }
+.particle-9 { top: 15%; left: 85%; animation-delay: 4s; animation-duration: 7s; }
+.particle-10 { top: 25%; left: 95%; animation-delay: 4.5s; animation-duration: 8s; }
+.particle-11 { top: 35%; left: 90%; animation-delay: 5s; animation-duration: 6s; }
+.particle-12 { top: 45%; left: 80%; animation-delay: 0.2s; animation-duration: 7s; }
+.particle-13 { top: 55%; left: 70%; animation-delay: 0.7s; animation-duration: 5s; }
+.particle-14 { top: 65%; left: 60%; animation-delay: 1.2s; animation-duration: 8s; }
+.particle-15 { top: 75%; left: 50%; animation-delay: 1.7s; animation-duration: 6s; }
+.particle-16 { top: 85%; left: 40%; animation-delay: 2.2s; animation-duration: 7s; }
+.particle-17 { top: 95%; left: 30%; animation-delay: 2.7s; animation-duration: 5s; }
+.particle-18 { top: 5%; left: 20%; animation-delay: 3.2s; animation-duration: 6s; }
+.particle-19 { top: 90%; left: 10%; animation-delay: 3.7s; animation-duration: 7s; }
+.particle-20 { top: 45%; left: 5%; animation-delay: 4.2s; animation-duration: 8s; }
+
+/* Neural network lines */
+.neural-network {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.neural-line {
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(229, 9, 20, 0.4),
+    rgba(255, 255, 255, 0.2),
+    rgba(229, 9, 20, 0.4),
+    transparent
+  );
+  animation: neuralPulse 4s ease-in-out infinite;
+}
+
+@keyframes neuralPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scaleX(0) scaleY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+.neural-line-1 { top: 10%; left: 10%; width: 200px; height: 2px; animation-delay: 0s; }
+.neural-line-2 { top: 30%; right: 15%; width: 150px; height: 2px; animation-delay: 0.5s; }
+.neural-line-3 { bottom: 20%; left: 20%; width: 180px; height: 2px; animation-delay: 1s; }
+.neural-line-4 { top: 50%; left: 5%; width: 2px; height: 120px; animation-delay: 1.5s; }
+.neural-line-5 { top: 25%; right: 5%; width: 2px; height: 160px; animation-delay: 2s; }
+.neural-line-6 { bottom: 30%; right: 25%; width: 2px; height: 100px; animation-delay: 2.5s; }
+.neural-line-7 { top: 60%; left: 40%; width: 140px; height: 2px; animation-delay: 3s; }
+.neural-line-8 { bottom: 40%; right: 40%; width: 120px; height: 2px; animation-delay: 3.5s; }
+
+/* Main content wrapper */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.content-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glitch effect for title */
+.glitch-container {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.main-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+}
+
+.holographic-text {
+  background: linear-gradient(
+    45deg,
+    #ff0000, #ff7300, #fffb00, #48ff00,
+    #00ffd5, #002bff, #7a00ff, #ff00c8,
+    #ff0000
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.5));
+}
+
+@keyframes holographic {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.5)) hue-rotate(0deg);
+  }
+  25% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 30px rgba(229, 9, 20, 0.7)) hue-rotate(90deg);
+  }
+  50% {
+    background-position: 50% 100%;
+    filter: drop-shadow(0 0 40px rgba(229, 9, 20, 0.9)) hue-rotate(180deg);
+  }
+  75% {
+    background-position: 50% 0%;
+    filter: drop-shadow(0 0 30px rgba(229, 9, 20, 0.7)) hue-rotate(270deg);
+  }
+}
+
+.glitch-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #e50914;
+  z-index: -1;
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  2% {
+    transform: translate(2px, -2px);
+    opacity: 0.8;
+  }
+  4% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+  }
+  6% {
+    transform: translate(2px, 2px);
+    opacity: 0.8;
+  }
+  8% {
+    transform: translate(-2px, -2px);
+    opacity: 0.8;
+  }
+  10% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+/* Glass morphism message card */
+.message-card {
+  background: rgba(26, 26, 26, 0.3);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 3rem 0;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.message-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(229, 9, 20, 0.1), transparent);
+  transition: left 0.8s ease;
+}
+
+.message-card:hover::before {
+  left: 100%;
+}
+
+.message-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(229, 9, 20, 0.6);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(229, 9, 20, 0.3),
+    inset 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.icon-container {
+  margin-bottom: 2rem;
+}
+
+.rotating-icon {
+  font-size: 3rem;
+  animation: iconRotate 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.6));
+}
+
+@keyframes iconRotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  75% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+}
+
+.construction-message {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e50914, #ff6b35, #e50914);
+  background-size: 200% 100%;
+  animation: progressFlow 2s ease-in-out infinite;
+  width: 65%;
+  border-radius: 2px;
+}
+
+@keyframes progressFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Navigation button */
+.nav-button {
+  display: inline-block;
+  position: relative;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #e50914, #f40612);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.3);
+  margin: 2rem 0;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.nav-button:hover::before {
+  left: 100%;
+}
+
+.nav-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 15px 40px rgba(229, 9, 20, 0.5),
+    0 0 30px rgba(229, 9, 20, 0.4);
+  filter: brightness(1.2);
+}
+
+.button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.button-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.nav-button:hover .button-glow {
+  width: 300%;
+  height: 300%;
+}
+
+/* Preview hint */
+.preview-hint {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(229, 9, 20, 0.1);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  animation: hintPulse 3s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+  }
+}
+
+.preview-hint p {
+  font-size: 1rem;
+  color: #e5e5e5;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Quantum ripple effect */
+.quantum-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.quantum-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(229, 9, 20, 0.4) 0%,
+    rgba(229, 9, 20, 0.1) 70%,
+    transparent 100%
+  );
+  transform: translate(-50%, -50%);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.quantum-ripple:hover::after {
+  width: 300%;
+  height: 300%;
+}
+
+/* Enhanced Mobile responsiveness */
+@media (max-width: 768px) {
+  .experience-container {
+    padding: 1rem;
+    min-height: 100vh;
+  }
+  
+  .content-wrapper {
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+  
+  .main-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    margin-bottom: 2rem;
+  }
+  
+  .message-card {
+    padding: 2rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 15px;
+  }
+  
+  .construction-message {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .nav-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .particle {
+    opacity: 0.3;
+    width: 2px;
+    height: 2px;
+  }
+  
+  .neural-line {
+    opacity: 0.2;
+  }
+  
+  .rotating-icon {
+    font-size: 2.5rem;
+  }
+  
+  .preview-hint {
+    margin-top: 2rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+  
+  .message-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .construction-message {
+    font-size: 1rem;
+  }
+  
+  .nav-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  
+  .preview-hint {
+    padding: 1rem;
+  }
+  
+  .preview-hint p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Hardware acceleration for better performance */
+.experience-container,
+.particle,
+.neural-line,
+.content-wrapper,
+.message-card,
+.nav-button {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

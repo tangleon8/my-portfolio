@@ -1,0 +1,345 @@
+/* ================================
+   ABOUT PAGE STYLES
+   ================================ */
+
+.about-page {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 40%, rgba(229, 9, 20, 0.1) 0%, transparent 50%);
+  opacity: 0.6;
+}
+
+.about-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.about-headshot {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid var(--netflix-red);
+  object-fit: cover;
+  box-shadow: 
+    var(--shadow-heavy), 
+    0 0 0 8px rgba(229, 9, 20, 0.1);
+}
+
+.about-hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.6));
+}
+
+.about-subtitle {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Content Sections */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.about-section {
+  margin: 4rem 0;
+  padding: 3rem;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--netflix-red);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-red);
+  border-radius: 2px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Experience Highlights */
+.experience-highlights {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.experience-item {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--netflix-red);
+}
+
+.experience-item h3 {
+  color: var(--netflix-red);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.experience-item p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Leadership Section */
+.leadership-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.leadership-card {
+  background: var(--bg-primary);
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leadership-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto 1.5rem;
+  border-radius: 12px;
+}
+
+.leadership-card h3 {
+  color: var(--netflix-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.leadership-card h4 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.leadership-card p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Fun Facts Section */
+.fun-facts {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.fact-item {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fact-item h3 {
+  color: var(--netflix-red);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.fact-item p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Bobby Section */
+.bobby-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-primary) 100%);
+}
+
+.bobby-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.bobby-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid var(--netflix-red);
+  object-fit: cover;
+}
+
+.bobby-text {
+  flex: 1;
+}
+
+.bobby-text p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Beliefs Section */
+.beliefs {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  text-align: center;
+}
+
+.beliefs-highlight {
+  background: rgba(229, 9, 20, 0.1);
+  border: 2px solid rgba(229, 9, 20, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.beliefs-highlight p {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .about-hero-text {
+    text-align: center;
+  }
+
+  .about-headshot {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-section {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .leadership-grid,
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bobby-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bobby-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 2rem 1rem;
+  }
+
+  .about-content {
+    padding: 0 1rem 2rem;
+  }
+
+  .about-headshot {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-section {
+    padding: 1.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .bobby-image {
+    width: 180px;
+    height: 180px;
+  }
+}

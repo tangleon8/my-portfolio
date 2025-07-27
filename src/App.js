@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import LoadingScreen from './components/LoadingScreen';
+import UserSelection from './components/UserSelection';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showUserSelection, setShowUserSelection] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+    setShowUserSelection(true);
+  };
+
+  const handleUserSelect = (user) => {
+    setSelectedUser(user);
+    setShowUserSelection(false);
+  };
+
+  // Show loading screen first
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
+
+  // Show user selection screen after loading
+  if (showUserSelection) {
+    return <UserSelection onUserSelect={handleUserSelect} />;
+  }
+
+  // Show main portfolio after user selection
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+      <div className="content">
+        <Home />
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.snake-game {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 20px);
+  gap: 1px;
+  justify-content: center;
+  background: #222;
+  padding: 10px;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  background: #555;
+}
+
+.snake {
+  background: #0f0;
+}
+
+.food {
+  background: #f00;
+}

@@ -1,0 +1,598 @@
+/* Netflix User Selection Screen */
+@import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap');
+
+.user-selection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.user-selection.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Background */
+.user-selection-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.netflix-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at center, rgba(20, 20, 20, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%),
+    linear-gradient(135deg, #141414 0%, #000000 50%, #141414 100%);
+}
+
+/* Main Content */
+.user-selection-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.selection-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 4rem 0;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  animation: titleSlideIn 1s ease-out 0.3s both;
+}
+
+@keyframes titleSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profiles Container */
+.profiles-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: profileSlideIn 0.8s ease-out both;
+  position: relative;
+}
+
+.profile-card:nth-child(1) { animation-delay: 0.4s; }
+.profile-card:nth-child(2) { animation-delay: 0.6s; }
+
+@keyframes profileSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.profile-card:hover {
+  transform: scale(1.1);
+}
+
+.profile-card:hover .profile-avatar {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.profile-card:hover .profile-name {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Profile Avatar */
+.profile-avatar {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  background: #333;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover .profile-avatar img {
+  transform: scale(1.05);
+}
+
+/* Lock Icon */
+.lock-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.lock-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Profile Name */
+.profile-name {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #999999;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+/* Manage Profiles Button */
+.manage-profiles-btn {
+  background: transparent;
+  border: 1px solid #808080;
+  color: #808080;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: inherit;
+  animation: buttonSlideIn 1s ease-out 0.8s both;
+}
+
+@keyframes buttonSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.manage-profiles-btn:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Password Modal */
+.password-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: modalOverlayFadeIn 0.3s ease-out;
+}
+
+@keyframes modalOverlayFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.password-modal {
+  background: #141414;
+  border-radius: 8px;
+  padding: 3rem;
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalSlideIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #ffffff;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  line-height: 1.4;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background: #333333;
+  border: 1px solid #555555;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+}
+
+.password-input.error {
+  border-color: #e87c03;
+  box-shadow: 0 0 0 2px rgba(232, 124, 3, 0.2);
+}
+
+.password-input::placeholder {
+  color: #999999;
+}
+
+.password-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #e87c03;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  animation: errorSlideIn 0.3s ease-out;
+}
+
+@keyframes errorSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cancel-btn, .continue-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  min-width: 100px;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid #666666;
+  color: #ffffff;
+}
+
+.cancel-btn:hover {
+  background: #666666;
+  transform: translateY(-1px);
+}
+
+.continue-btn {
+  background: #e50914;
+  border: 1px solid #e50914;
+  color: #ffffff;
+}
+
+.continue-btn:hover {
+  background: #f40612;
+  border-color: #f40612;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .selection-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .profiles-container {
+    gap: 2rem;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-name {
+    font-size: 1.1rem;
+  }
+  
+  .password-modal {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+  }
+  
+  .cancel-btn, .continue-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .selection-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .profiles-container {
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .password-modal {
+    padding: 1.5rem;
+  }
+  
+  .modal-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .user-selection {
+    background: #000000;
+  }
+  
+  .selection-title {
+    color: #ffffff;
+  }
+  
+  .profile-name {
+    color: #ffffff;
+  }
+  
+  .password-input {
+    background: #000000;
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+}
+
+/* Enhanced ultra-small mobile support */
+@media (max-width: 360px) {
+  .selection-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .profiles-container {
+    gap: 1rem !important;
+  }
+  
+  .profile-avatar {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  
+  .profile-name {
+    font-size: 1rem !important;
+  }
+  
+  .password-modal {
+    padding: 1rem !important;
+    margin: 0.5rem !important;
+  }
+  
+  .modal-avatar {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .modal-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .manage-profiles-btn {
+    font-size: 0.9rem !important;
+    padding: 0.6rem 1.2rem !important;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) and (max-height: 500px) {
+  .user-selection-content {
+    transform: scale(0.85);
+    padding: 1rem;
+  }
+  
+  .selection-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .profiles-container {
+    gap: 2rem;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .manage-profiles-btn {
+    margin-top: 1rem;
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: none) and (pointer: coarse) {
+  .profile-card {
+    min-height: 60px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .profile-card:active {
+    transform: scale(0.98);
+    background-color: rgba(229, 9, 20, 0.1);
+  }
+  
+  .manage-profiles-btn {
+    min-height: 44px;
+    min-width: 120px;
+  }
+  
+  .cancel-btn, .continue-btn {
+    min-height: 48px;
+    min-width: 100px;
+  }
+  
+  .password-input {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  .user-selection {
+    will-change: transform;
+  }
+  
+  .profile-card {
+    will-change: transform;
+    transform: translateZ(0); /* Hardware acceleration */
+  }
+  
+  .password-modal {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
