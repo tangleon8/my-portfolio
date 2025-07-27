@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="netflixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e50914;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e50914;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#000000" stroke="url(#netflixGradient)" stroke-width="2"/>
+  
+  <!-- Letter L -->
+  <path d="M8 6 L8 24 L18 24 L18 21 L11 21 L11 6 Z" fill="url(#netflixGradient)" filter="url(#glow)"/>
+  
+  <!-- Letter T -->
+  <path d="M16 6 L24 6 L24 9 L21.5 9 L21.5 24 L18.5 24 L18.5 9 L16 9 Z" fill="url(#netflixGradient)" filter="url(#glow)"/>
+</svg>
