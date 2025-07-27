@@ -3,17 +3,12 @@ import './Home.css';
 import Chatbot from '../pages/chatbot';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import fart from '../assets/fart.png';
-import foodpantry from '../assets/Screenshot 2025-01-22 at 10.03.07 PM.png';
 import rugby from '../assets/download (2).png';
 import issa from '../assets/Screenshot_2024-11-24_at_6.44.46_PM-removebg-preview.png';
 import bobby from '../assets/IMG_4585.jpg';
 import resume from '../assets/TheResume-20.pdf';
 import skunkwork from '../assets/skunkworks.png';
 import headshot1 from '../assets/headshot1.jpeg';
-import projectImage1 from '../assets/autonomous-systems.png';
-import projectImageIC24 from '../assets/IC-24.jpeg';
-import website from '../assets/Screenshot 2024-11-27 at 12.19.43 AM.png';
 import rugbysite from '../assets/umbcrugby.png';
 import issasite from '../assets/umbcissa.png';
 import house from '../assets/house.webp';
@@ -101,46 +96,6 @@ const Home = () => {
     }
   };
 
-  const projects = [
-    {
-      title: "Exploring Deceptive Techniques in Mobile Intelligent Autonomous Systems: Attacks and Defenses",
-      image: projectImage1,
-      description: `
-        Award-Winning Research on Cybersecurity Threats: This two-time award-winning research goes into the security challenges faced by autonomous systems like drones, unmanned vehicles, and self-driving cars.
-        Also, it references defensive measures such as adversarial training and fortification of machine learning models ensuring these systems can resist and recover from attacks.
-      `,
-    },
-    {
-      title: "Login Chronicles: Cybersecurity Insights from Ernst & Young's 2024 UMD IC Analysis",
-      image: projectImageIC24,
-      description: `
-        Award-Winning Cybersecurity Project: This project goes into Ernst & Young's authentication logs to reveal critical security vulnerabilities.
-        Combining C++ data structures with Excel analytics, the project identifies unusual login patterns and visualizes key security metrics.
-      `,
-      link: "https://ischool.umd.edu/about/info-challenge-initiative/challenge/projects/",
-    },
-    {
-      title: "Student Dropout Prediction with Support Vector Machines and Data Normalization Techniques",
-      image: fart,
-      description: `
-        This study explores using Support Vector Machines (SVMs) to predict student dropout rates focusing on the impact of nine data normalization techniques. Using UC Irvine's dataset, it categorizes outcomes as dropout, enrolled, or graduated and applies methods like Min Max Scaler, Standard Scaler, and One Hot Encoder. The One Hot Encoder achieved the highest F1 score of 0.779, highlighting the importance of data preprocessing in improving machine learning accuracy for identifying at-risk students.
-      `,
-    },
-    {
-      title: "Machine Learning and Predictive Analysis for Donation Campaign Optimization",
-      image: foodpantry,
-      description: `
-        Collaborated with The River Food Pantry, Wisconsin’s busiest food pantry to develop machine learning models optimizing donation campaigns. Key contributions included feature engineering, SHAP analysis for feature importance, and the development of interactive dashboards to visualize trends and insights. This project empowered the organization to enhance its mission of serving over 2,500 people weekly through impactful donations.
-      `,
-    },
-    {
-      title: "Leon Tang's Portfolio Website",
-      image: website,
-      description: `
-        This site was developed using React.js using modular components and reusable hooks to create a dynamic user interface. I used CSS3 animations and AOS (Animate on Scroll) for smooth transitions and features like light/dark mode toggling using state management. The project is hosted on Vercel with a custom domain and used React lifecycle methods with interactive elements like project carousels, scroll-based animations, and responsive skill grids.
-      `,
-    },
-  ];
 
   const experiences = [
     {
@@ -251,31 +206,7 @@ const Home = () => {
     },
   ];
 
-  useEffect(() => {
-    const cursor = document.querySelector('.custom-cursor');
-    if (!cursor) return;
-    const moveCursor = (e) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-    };
-    window.addEventListener('mousemove', moveCursor);
-    return () => window.removeEventListener('mousemove', moveCursor);
-  }, []);
 
-  useEffect(() => {
-    const circles = document.querySelectorAll('.floating-circle');
-    const moveCircles = (e) => {
-      const { clientX, clientY } = e;
-      circles.forEach((circle, index) => {
-        const speed = (index + 1) * 0.1;
-        const x = (clientX * speed) / 10;
-        const y = (clientY * speed) / 10;
-        circle.style.transform = `translate(${x}px, ${y}px)`;
-      });
-    };
-    window.addEventListener('mousemove', moveCircles);
-    return () => window.removeEventListener('mousemove', moveCircles);
-  }, []);
 
   useEffect(() => {
     AOS.init({
@@ -309,7 +240,7 @@ const Home = () => {
       <div className="home">
         <div className="hero" id="home">
           <div className="animated-bg"></div>
-          {[...Array(10)].map((_, index) => (
+          {[...Array(15)].map((_, index) => (
               <div key={index} className={`floating-circle circle-${index + 1}`} style={{'--i': index}}></div>
           ))}
           <div className="hero-content">
@@ -371,22 +302,6 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="projects" className="section projects" data-aos="fade-up">
-          <h2 data-aos="slide-down" data-aos-duration="800">My Projects</h2>
-          <div className="project-carousel">
-            {projects.map((project, index) => (
-                <div className="project-card" key={index} data-aos="zoom-in" data-aos-delay={index * 100}>
-                  <img src={project.image} alt={project.title} className="project-image"/>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  {project.link && (
-                      <p><a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">Read
-                        more about it here</a></p>
-                  )}
-                </div>
-            ))}
-          </div>
-        </section>
 
         <section id="certifications" className="section certifications" data-aos="fade-up">
           <h2 data-aos="slide-down" data-aos-duration="800">Certifications</h2>
@@ -394,14 +309,9 @@ const Home = () => {
             <div className="cert-card" data-aos="flip-up" data-aos-once="false">
               <img src={sec} alt="CompTIA Security+" className="cert-image"/>
               <h3>CompTIA Security+</h3>
-              <a
-                  href="https://www.credly.com/badges/031fccd5-d849-4de6-a0ae-3903ddce13f5/public_url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cert-link"
-              >
+<span className="cert-link disabled">
                 View Credential ↗
-              </a>
+              </span>
             </div>
           </div>
         </section>
@@ -412,7 +322,7 @@ const Home = () => {
           <div className="publication-card" data-aos="fade-in" data-aos-delay="200">
             {/* Left: Conference/Image */}
             <img
-                src= {bigdataPub}
+                src="https://cdn.shopify.com/s/files/1/1268/5407/files/what-is-ieee-802.3.jpg?v=1591386495"
                 alt="IEEE Big Data Conference"
                 className="publication-image"
                 data-aos="zoom-in"
