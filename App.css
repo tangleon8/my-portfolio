@@ -17,6 +17,11 @@ body {
   padding: 2rem;
 }
 
+/* Ensure content is not overlapped by the fixed mobile header */
+@media (max-width: 768px) {
+  .content { padding-top: 56px; }
+}
+
 h1, h2, h3 {
   color: #f6e05e; /* Highlighted headings */
 }
